@@ -17,7 +17,7 @@ const Feed = () => {
       setModalIsOpen(false);
     }
   return (
-    <div className='mt-20'>
+    <div className='mt-10'>
         <div>
             <h1 className='text-[#C5C7CA] text-[28px]'>Hello, {localStorage? localStorage.getItem('username'): "John"}</h1>
             <p className='text-[#7F8084] text-[14px]'>How are you doing today? Would you like to share something with the community 🤗</p>

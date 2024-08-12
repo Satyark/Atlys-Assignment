@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 const Layout = ({ children }: PropsWithChildren) => {
   return (
     <div
-      className={`h-screen bg-[#131319] flex items-center justify-center w-full ${inter.className}`}
+      className={`flex items-center justify-center w-full ${inter.className}`}
     >
       {children}
     </div>
