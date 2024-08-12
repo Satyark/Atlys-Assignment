@@ -20,11 +20,12 @@ const Login = () => {
     }
   }
   return (
-    <div>
+    <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
       <div className='flex justify-center w-full my-10'>
       <Image src='/Shape.png' alt='/Shape.png' width={32} height={32} className='flex justify-center'/>
       </div>
-      <div className="bg-[#27292D] p-5 rounded-lg shadow-lg max-w-sm w-[463px] border-[2px]">
+      <div className="max-w-md rounded-lg p-px bg-gradient-to-br from-[#969696] to-[#343434]">
+      <div className="bg-[#27292D] p-5 rounded-lg shadow-lg max-w-sm w-[463px]">
         <div className="flex justify-center items-center mb-6 w-full mt-4">
           <div className="font-semibold">
             <h3 className="text-[#6B6C70] flex justify-center text-[12px]">WELCOME BACK</h3>
@@ -49,6 +50,7 @@ const Login = () => {
           <div className="mt-2 text-left text-[14px] text-[#7F8084] mb-6">
           Not registered yet? <a href="#" className="text-white text-opacity-80 hover:underline">Register →</a>
         </div>  
+      </div>
       </div>
       </div>
   );
