@@ -8,19 +8,15 @@ Modal.setAppElement("#__next");
 
 const Feed = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [username, setUsername] = useState("John");
+  const [username, setUsername] = useState("");
 
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
+  const openModal = () => setModalIsOpen(true);
+  
+  const closeModal = () => setModalIsOpen(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setUsername(localStorage.getItem("username") ?? "");
+      setUsername(localStorage.getItem("username") ?? "John");
     }
   }, []);
 
@@ -38,6 +34,7 @@ const Feed = () => {
         <CreatePost openModal={openModal} />
         <FeedPosts />
       </div>
+
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}

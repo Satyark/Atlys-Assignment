@@ -1,15 +1,12 @@
 import Layout from "@/components/layout/Layout";
 import Feed from "@/components/Feed";
 
-
-const FeedPage= ()=> {
-
+const FeedPage = () => {
   return (
     <Layout>
-    <Feed/>
+      <Feed />
     </Layout>
   );
-}
-
+};
 
 export default FeedPage;
