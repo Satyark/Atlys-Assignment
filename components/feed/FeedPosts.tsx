@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
 import Image from 'next/image';
-
 
 const FeedPosts = () => {
     
   return (
     <div>
-        <div className='w-[700px] h-[223px] border-[2px] border-[#35373B] bg-[#27292D] rounded-[8px] mt-2'>
+        <div className='w-[700px] p-1 border-[2px] border-[#35373B] bg-[#27292D] rounded-[8px] mt-2'>
               <div className='flex justify-between items-center m-4'>
                 <div className='flex justify-start w-[177px] h-[44px]'>
                     <Image src='/girl.png' alt='/girl.png' width={44} height={44} className='rounded-full object-cover' />
                     <div className='mx-2'>
                         <p className='text-[#C5C7CA] text-[14px]'>Theresa Webb</p>
-                        <p className='text-[#7F8084] text-[12px]'>5mins ago</p>
+                        <p className='text-[#7F8084] text-[12px]'>5 mins ago</p>
                     </div>
                 </div>
                 <button className='w-[16.33px] h-[8.5px] text-[#C5C7CA] mb-5'>...</button>
@@ -25,7 +23,7 @@ const FeedPosts = () => {
                 <p className='text-[14px] text-[#7F8084]'>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p> 
                 </div>               
               </div>
-              <div className='flex justify-start mx-4 my-2'>
+              <div className='flex justify-start mx-4 my-2 items-center'>
                 <Image src='/Chat_Bubble.png' alt='/Chat_Bubble.png' width={20} height={20}/>
                 <p className='text-[12px] text-[#7F8084] ml-2'>24 comments</p>
               </div>
@@ -38,7 +36,7 @@ const FeedPosts = () => {
                     <Image src='/baldguy.png' alt='/baldguy.png' width={44} height={44} className='rounded-full' />
                     <div className='mx-2'>
                         <p className='text-[#C5C7CA] text-[14px]'>Marvin McKinney</p>
-                        <p className='text-[#7F8084] text-[12px]'>8mins ago • Edited</p>
+                        <p className='text-[#7F8084] text-[12px]'>8 mins ago • Edited</p>
                     </div>
                 </div>
                 <button className='w-[16.33px] h-[8.5px] text-[#C5C7CA] mb-5'>...</button>

@@ -17,13 +17,13 @@ const Feed = () => {
       setModalIsOpen(false);
     }
   return (
-    <div>
-        <div className='mt-8'>
+    <div className='mt-20'>
+        <div>
             <h1 className='text-[#C5C7CA] text-[28px]'>Hello, {localStorage? localStorage.getItem('username'): "John"}</h1>
             <p className='text-[#7F8084] text-[14px]'>How are you doing today? Would you like to share something with the community 🤗</p>
         </div>
 
-        <div>
+        <div className='mb-10'>
             <CreatePost openModal={openModal}/>
             <FeedPosts/>
         </div>
@@ -40,7 +40,7 @@ const Feed = () => {
             // marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
             // padding: '20px',
-            // backgroundColor: '#2d2d2d',
+            backgroundColor: '#27292D',
             color: '#fff',
             borderRadius: '8px',
           },
