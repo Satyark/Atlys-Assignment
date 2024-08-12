@@ -1,8 +1,8 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { DispatchWithoutAction, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 
-const SignUp = ({ closeModal }: { closeModal: () => void }) => {
+const SignUp = ({ closeModal }: { closeModal: DispatchWithoutAction }) => {
   const [name, setName] = useState("");
   const [passwordType, setPasswordType] = useState("password");
   const handleClick = () => {
@@ -11,7 +11,7 @@ const SignUp = ({ closeModal }: { closeModal: () => void }) => {
       : setPasswordType("password");
   };
   return (
-    <div className="bg-[#27292D] rounded-lg shadow-lg max-w-sm w-[463px]">
+    <div className="bg-[#27292D] p-5 rounded-lg max-w-sm w-[463px]">
       <span className="flex justify-end">
         <button
           className="rounded-full w-[32px] h-[32px] bg-[#131319] flex justify-center items-center"
