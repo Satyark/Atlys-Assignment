@@ -6,7 +6,7 @@ const FeedPosts = () => {
     
   return (
     <div>
-      {posts.map((post, i)=>(
+      {posts?.map((post, i)=>(
         <div className='w-[700px] p-1 border-[2px] border-[#35373B] bg-[#27292D] rounded-[8px] mt-2'>
         <div className='flex justify-between items-center m-4'>
           <div className='flex justify-start w-[177px] h-[44px]'>

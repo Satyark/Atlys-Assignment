@@ -1,10 +1,11 @@
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import React, { DispatchWithoutAction } from "react";
-import FeedPosts from "./FeedPosts";
-import { posts } from '@/data';
+import { useAppContext } from "@/hooks/useAppContext";
 
 const CreatePost = ({ openModal }: { openModal: DispatchWithoutAction }) => {
+  const {postData, setPostData} = useAppContext();
+  
   return (
     <div className="w-[700px] h-[223px] border-[2px] border-[#35373B] bg-[#27292D] rounded-[8px] mt-8">
       <h2 className="text-[16px] text-[#C5C7CA] m-4">Create Post</h2>

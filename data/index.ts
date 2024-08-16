@@ -8,7 +8,7 @@ export type Post = {
     comments: string;
 };
 
-export const posts: Post[] = [
+export const posts: Post[] | undefined = [
     {
         id: 1,
         author: 'Theresa Webb',
