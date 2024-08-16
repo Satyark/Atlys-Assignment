@@ -1,6 +1,8 @@
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import React, { DispatchWithoutAction } from "react";
+import FeedPosts from "./FeedPosts";
+import { posts } from '@/data';
 
 const CreatePost = ({ openModal }: { openModal: DispatchWithoutAction }) => {
   return (
