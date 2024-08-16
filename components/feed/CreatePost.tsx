@@ -4,6 +4,7 @@ import React, { DispatchWithoutAction } from "react";
 import { useAppContext } from "@/hooks/useAppContext";
 
 const CreatePost = ({ openModal }: { openModal: DispatchWithoutAction }) => {
+  
   const {postData, setPostData} = useAppContext();
   
   return (
