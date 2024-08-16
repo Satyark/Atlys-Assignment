@@ -1,3 +1,4 @@
+import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import React, { DispatchWithoutAction } from "react";
 
@@ -21,12 +22,15 @@ const CreatePost = ({ openModal }: { openModal: DispatchWithoutAction }) => {
         />
       </div>
       <div className="flex justify-end">
-        <button
-          className="w-[111px] h-[43px] bg-[#4A96FF] hover:opacity-80 transition duration-500 hover:transition text-[14px] m-4 rounded-[4px]"
-          onClick={openModal}
+        <Button
+          onClick={() => openModal()}
+          variant="solid"
+          color="primary"
+          radius="sm"
+          className="mt-4 mr-5"
         >
           Post
-        </button>
+        </Button>
       </div>
     </div>
   );
