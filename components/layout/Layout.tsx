@@ -8,16 +8,22 @@ import { useAccount } from "wagmi";
 const inter = Inter({ subsets: ["latin"] });
 
 const Layout = ({ children }: PropsWithChildren) => {
-  
-  const router = useRouter()
+  const router = useRouter();
   const { isConnected, isDisconnected } = useAccount();
 
-  useEffect(()=>{
-    if(isDisconnected){
+  useEffect(() => {
+    if (typeof window !== undefined && isConnected) {
+      localStorage.setItem("loginType", "wallet");
+    }
+  }, [isConnected]);
+
+  useEffect(() => {
+    if (isDisconnected && localStorage.getItem("loginType") === "wallet") {
+      localStorage.removeItem("loginType");
       router.push("/", undefined, { shallow: true });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[isDisconnected])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isDisconnected]);
 
   return (
     <>

@@ -33,7 +33,7 @@ const Login = () => {
       setTimeout(async () => {
         await login(name);
         router.push("/feed", undefined, { shallow: true });
-      }, 3500);
+      }, 2000);
     } catch (error) {
       console.error("Login Failed:", error);
       alert("Login Failed. Please try again!");
