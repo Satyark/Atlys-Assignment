@@ -3,22 +3,30 @@ import FeedPosts from "./feed/FeedPosts";
 import Modal from "react-modal";
 import SignUp from "./feed/SignUp";
 import CreatePost from "./feed/CreatePost";
+import { useAccount } from "wagmi";
+import { formatWalletAddress } from "@/helper/address.helper";
+import { zeroAddress } from "viem";
 
 Modal.setAppElement("#__next");
 
 const Feed = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [username, setUsername] = useState("");
+  const { isConnected, address } = useAccount();
 
   const openModal = () => setModalIsOpen(true);
-  
+
   const closeModal = () => setModalIsOpen(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setUsername(localStorage.getItem("username") ?? "John");
+      if (!isConnected) {
+        setUsername(localStorage.getItem("username") ?? "John");
+      } else {
+        setUsername(formatWalletAddress(address ?? zeroAddress));
+      }
     }
-  }, []);
+  }, [address, isConnected]);
 
   return (
     <div className="mt-10">
