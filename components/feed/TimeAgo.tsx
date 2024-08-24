@@ -4,7 +4,7 @@ interface TimeAgoProps {
   postDate: string; // ISO string format
 }
 
-const TimeAgo= ( postDate: string ): string => {
+const TimeAgo: React.FC<TimeAgoProps> = ({ postDate }) => {
   const [timeAgo, setTimeAgo] = useState<string>('');
 
   useEffect(() => {
@@ -16,7 +16,11 @@ const TimeAgo= ( postDate: string ): string => {
 
       if (differenceInMinutes < 1) {
         setTimeAgo('Just now');
-      } else {
+      } 
+      else if(differenceInMinutes>1140){
+        setTimeAgo('1 day ago')
+      }
+      else {
         setTimeAgo(`${differenceInMinutes} minute${differenceInMinutes > 1 ? 's' : ''} ago`);
       }
     };
@@ -27,8 +31,7 @@ const TimeAgo= ( postDate: string ): string => {
     return () => clearInterval(intervalId);
   }, [postDate]);
 
-  return timeAgo; 
-//   <span>{timeAgo}</span>;
+  return <p className='text-[12px] text-[#7F8084]'>{timeAgo}</p>;
 };
 
 export default TimeAgo;
