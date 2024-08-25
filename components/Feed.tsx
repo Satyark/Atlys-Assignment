@@ -30,7 +30,7 @@ const Feed = () => {
 
   return (
     <div className="mt-10">
-      <div className="ml-3">
+      <div className="ml-6 sm:ml-1">
         <h1 className="text-[#C5C7CA] text-[28px]">Hello, {username}</h1>
         <p className="text-[#7F8084] text-[14px]">
           How are you doing today? Would you like to share something with the
@@ -38,7 +38,7 @@ const Feed = () => {
         </p>
       </div>
 
-      <div className="mb-10 justify-center">
+      <div className="mb-10 justify-center p-5 sm:p-0">
         <CreatePost openModal={openModal} />
         <FeedPosts />
       </div>
