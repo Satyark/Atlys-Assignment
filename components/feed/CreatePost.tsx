@@ -6,10 +6,11 @@ import { useAccount } from "wagmi";
 import { formatWalletAddress } from "@/helper/address.helper";
 import { zeroAddress } from "viem";
 import TimeAgo from "./TimeAgo";
+import { Post } from "@/data";
 
 const CreatePost = ({ openModal }: { openModal: DispatchWithoutAction }) => {
   const [content, setContent] = useState('');
-  const {setPostData} = useAppContext();
+  const {postData,setPostData} = useAppContext();
   const [username, setUsername] = useState("");
   const { isConnected, address } = useAccount();
   const postDate: string = new Date().toISOString();
@@ -24,23 +25,26 @@ const CreatePost = ({ openModal }: { openModal: DispatchWithoutAction }) => {
     }
   }, [address, isConnected]);
 
-  const handlePost = ()=>{
+  const handlePost = () => {
     setContent('');
-    setPostData((postData: any) => {
-      return[
-        ...postData,{
-          id: postData.length-1,
+    setPostData((postData: Post[] | undefined) => {
+      const currentPosts = postData ?? [];
+      return [
+        ...currentPosts,
+        {
+          id: currentPosts.length,
           author: username,
           time: 'AhaanS',
-          profile:'/ahaan.jpeg',
+          profile: '/ahaan.jpeg',
           emoji: '/hand.png',
-          content:content,
+          content: content,
           comments: '0 comments',
           createdAt: postDate,
         }
-      ]
+      ];
     });
-  }
+  };
+  console.log("CreatePost-->", postData);
   
   return (
     <div className="sm:w-[700px] sm:h-[223px] w-[350px] h-[223px] border-[2px] border-[#35373B] bg-[#27292D] rounded-[8px] mt-8">

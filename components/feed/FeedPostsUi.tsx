@@ -4,6 +4,7 @@ import TimeAgo from './TimeAgo';
 import Image from 'next/image';
 import DropdownButton from './Dropdown';
 import { posts } from '@/data';
+import { useAppContext } from '@/hooks/useAppContext';
 
 const FeedPostsUi = ({
     id,
@@ -27,13 +28,15 @@ const FeedPostsUi = ({
     username:string;
 }) => {
   const [inputContent, setInputContent] = useState(content);
-  console.log('--->', inputContent,id);
+  // console.log('--->', inputContent,id);
+  const {postData,setPostData} = useAppContext();
   const [isEditing, setIsEditing] = useState(false);
   const [isDelete, setIsDelete] = useState(false);
   const [displayContent, setDisplayContent] = useState(content);
   const handleEdit=()=>{
     if (isEditing) {
-      const post = posts?.find(post => post.id === id);
+      const post = postData?.find(post => post.id === id);
+      
       if (post) {
         post.content = inputContent;
       }
@@ -43,11 +46,12 @@ const FeedPostsUi = ({
     // setIsEditing(false)
   }
   const handleDelete = () => {
-    const postIndex = posts?.findIndex(post => post.id === id);
+    const postIndex = postData?.findIndex(post => post.id === id);
     if (postIndex && postIndex !== -1) {
-      posts?.splice(postIndex, 1);
+      postData?.splice(postIndex, 1);
     }
   };
+  console.log("-->", postData);
   return (
       <div
           className="sm:w-[700px] w-[350px] p-1 border-[2px] border-[#35373B] bg-[#27292D] rounded-[8px] mt-2"
