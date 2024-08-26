@@ -40,7 +40,7 @@ const Feed = () => {
 
       <div className="mb-10 justify-center p-5 sm:p-0">
         <CreatePost openModal={openModal} />
-        <FeedPosts />
+        <FeedPosts username={username} />
       </div>
 
       <Modal
